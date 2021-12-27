@@ -3,13 +3,11 @@
   height: 155px;
   background-color: #f25a70;
   border-radius: 30px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .memory-card > .icon {
   width: 100px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
