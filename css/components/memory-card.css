@@ -12,3 +12,31 @@
 .memory-card > .icon {
   width: 100px;
 }
+
+.memory-card.-verse {
+  width: 155px;
+  height: 155px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 30px;
+  align-items: center;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  z-index: 0;
+}
+
+.memory-card.-verse > .icon {
+  width: 100px;
+  z-index: 2;
+}
+
+.memory-card.-verse::before {
+  content: '';
+  width: 94px;
+  height: 94px;
+  border-radius: 100%;
+  background-color: #d4d4d4;
+  position: absolute;
+  z-index: 1;
+  transform: translateY(10px);
+}
