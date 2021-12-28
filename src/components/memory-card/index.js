@@ -1,5 +1,3 @@
-const $wrapCards = document.querySelector('.wrap-cards');
-
 function createMemoryCard() {
   const $memoryCard = document.createElement('article');
   const $iconCollab = `
@@ -13,6 +11,10 @@ function createMemoryCard() {
   $memoryCard.classList.add('memory-card');
   $wrapCards.insertBefore($memoryCard, null);
   $memoryCard.insertAdjacentHTML('afterbegin', $iconCollab);
+
+  $memoryCard.addEventListener('click', () => {
+    console.log('ae');
+  });
 }
 
 function createMemoryCardFront() {
@@ -28,6 +30,9 @@ function createMemoryCardFront() {
   $memoryCardFront.classList.add('memory-card');
   $memoryCardFront.classList.add('-front');
   $wrapCards.insertBefore($memoryCardFront, null);
-
   $memoryCardFront.insertAdjacentHTML('afterbegin', $iconJS);
+
+  $memoryCardFront.addEventListener('click', () => {
+    console.log('ae-front');
+  });
 }
