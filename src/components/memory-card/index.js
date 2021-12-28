@@ -1,5 +1,6 @@
+const $wrapCards = document.querySelector('.wrap-cards');
+
 function createMemoryCard() {
-  const $root = document.querySelector('#root');
   const $memoryCard = document.createElement('article');
   const $iconCollab = `
   <img
@@ -10,6 +11,23 @@ function createMemoryCard() {
 `;
 
   $memoryCard.classList.add('memory-card');
-  $root.insertBefore($memoryCard, null);
+  $wrapCards.insertBefore($memoryCard, null);
   $memoryCard.insertAdjacentHTML('afterbegin', $iconCollab);
+}
+
+function createMemoryCardFront() {
+  const $memoryCardFront = document.createElement('article');
+  const $iconJS = `
+  <img
+    src="img/icon-js.png"
+    alt="Icone do livro JavaScript"
+    class="icon"
+  />
+`;
+
+  $memoryCardFront.classList.add('memory-card');
+  $memoryCardFront.classList.add('-front');
+  $wrapCards.insertBefore($memoryCardFront, null);
+
+  $memoryCardFront.insertAdjacentHTML('afterbegin', $iconJS);
 }

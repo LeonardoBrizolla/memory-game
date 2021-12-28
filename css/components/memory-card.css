@@ -1,8 +1,6 @@
 .memory-card {
-  max-width: 155px;
-  width: 100%;
-  min-height: 155px;
-  height: 100%;
+  width: 155px;
+  height: 155px;
   background-color: #f25a70;
   border-radius: 30px;
   display: flex;
@@ -10,7 +8,6 @@
   align-items: center;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   position: relative;
-  box-sizing: border-box;
 }
 
 .memory-card.-front {
