@@ -1,0 +1,9 @@
+@media (max-width: 370px) {
+  #root {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
+    row-gap: 16px;
+  }
+}
