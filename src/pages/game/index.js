@@ -1,6 +1,8 @@
 const $root = document.querySelector('#root');
 
 const $cardsWrapper = createCardsWrapper();
+const createMemoryCard = memoryCard();
+
 const $memoryCardJS = createMemoryCard({
   nameClass: '-front',
   src: 'img/icon-js.png',
