@@ -1,18 +1,12 @@
-const createMemoryCard = (front, icon, alt) => {
-  const $memoryCard = `
-  <article class="memory-card ${front}">
+const createMemoryCard = (src, alt, nameClass) => `
+  <article class="memory-card ${nameClass}">
     <img
-      src="img/${icon}"
+      src="${src}"
       alt="${alt}"
       class="icon"
       onClick="handleClick()"
     />
   </article>
-  `;
+`;
 
-  return $memoryCard;
-};
-
-function handleClick() {
-  console.log('ae');
-}
+const handleClick = () => console.log('ae');

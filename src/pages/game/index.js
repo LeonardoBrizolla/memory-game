@@ -2,14 +2,13 @@ const $root = document.querySelector('#root');
 
 const $cardsWrapper = createCardsWrapper();
 const $memoryCard = createMemoryCard(
-  '',
-  'icon-collabcode.svg',
+  'img/icon-collabcode.svg',
   'Gueio mascote da CollabCode'
 );
 const $memoryCardFront = createMemoryCard(
-  '-front',
-  'icon-js.png',
-  'Icone do livro JavaScript'
+  'img/icon-js.png',
+  'Livro JS',
+  '-front'
 );
 
 $cardsWrapper.insertAdjacentHTML('beforeend', $memoryCard);
