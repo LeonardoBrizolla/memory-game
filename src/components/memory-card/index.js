@@ -1,38 +1,33 @@
 function createMemoryCard() {
-  const $memoryCard = document.createElement('article');
-  const $iconCollab = `
-  <img
-    src="img/icon-collabcode.svg"
-    alt="Gueio mascote da CollabCode"
-    class="icon"
-  />
-`;
+  const $memoryCard = `
+  <article class="memory-card">
+    <img
+      src="img/icon-collabcode.svg"
+      alt="Gueio mascote da CollabCode"
+      class="icon"
+      onClick="handleClick()"
+    />
+  </article>
+  `;
 
-  $memoryCard.classList.add('memory-card');
-  $wrapCards.insertBefore($memoryCard, null);
-  $memoryCard.insertAdjacentHTML('afterbegin', $iconCollab);
-
-  $memoryCard.addEventListener('click', () => {
-    console.log('ae');
-  });
+  return $memoryCard;
 }
 
 function createMemoryCardFront() {
-  const $memoryCardFront = document.createElement('article');
-  const $iconJS = `
-  <img
-    src="img/icon-js.png"
-    alt="Icone do livro JavaScript"
-    class="icon"
-  />
-`;
+  const $memoryCardFront = `
+  <article class="memory-card -front">
+    <img
+      src="img/icon-js.png"
+      alt="Icone do livro JavaScript"
+      class="icon"
+      onClick="handleClick()"
+    />
+  </article>
+  `;
 
-  $memoryCardFront.classList.add('memory-card');
-  $memoryCardFront.classList.add('-front');
-  $wrapCards.insertBefore($memoryCardFront, null);
-  $memoryCardFront.insertAdjacentHTML('afterbegin', $iconJS);
+  return $memoryCardFront;
+}
 
-  $memoryCardFront.addEventListener('click', () => {
-    console.log('ae-front');
-  });
+function handleClick() {
+  console.log('ae');
 }
