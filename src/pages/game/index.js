@@ -4,6 +4,7 @@
   const $cardsWrapper = createCardsWrapper();
   const createMemoryCard = memoryCard.create();
 
+  const $pointBar = pointBar.create();
   const $memoryCardJS = createMemoryCard({
     nameClass: '-front',
     src: 'img/icon-js.png',
@@ -34,5 +35,6 @@
   $cardsWrapper.insertAdjacentHTML('beforeend', $memoryCardJS);
   $cardsWrapper.insertAdjacentHTML('beforeend', $memoryCardHeadCode);
 
+  $root.insertAdjacentHTML('afterbegin', $pointBar);
   $root.insertAdjacentElement('beforeend', $cardsWrapper);
 })();
