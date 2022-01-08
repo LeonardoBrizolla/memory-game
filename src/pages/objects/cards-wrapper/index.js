@@ -1,4 +1,7 @@
 const createCardsWrapper = () => {
+  const $cardsWrapper = document.createElement('section');
+  $cardsWrapper.classList.add('cards-wrapper');
+
   const $head = document.querySelector('head');
   const $style = document.createElement('style');
   $style.textContent = `
@@ -16,7 +19,11 @@ const createCardsWrapper = () => {
   `;
   $head.insertBefore($style, null);
 
-  const $cardsWrapper = document.createElement('section');
-  $cardsWrapper.classList.add('cards-wrapper');
+  $cardsWrapper.addEventListener('click', (event) => {
+    store.countActiveMemoryCards = $cardsWrapper.querySelectorAll(
+      '.memory-card.-active'
+    ).length;
+  });
+
   return $cardsWrapper;
 };
