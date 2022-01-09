@@ -7,36 +7,33 @@ const gameButton = (() => {
 
     $style.textContent = `
       .game-button {
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
         background-color: #50fa7b;
         border-radius: 50%;
+        border: 3px solid #fffcee;
         position: absolute;
-        bottom: 40px;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
         cursor: pointer;
-        transition: opacity 100ms linear;
         font-weight: bold;
+        color: #fffcee;
+        font-size: 1.05em;
         text-transform: uppercase;
-      }
-
-      .game-button:hover {
-        opacity: 0.8;
+        box-shadow: 0px 4px 5px #3a4042;
       }
     `;
 
     $head.insertBefore($style, null);
   };
 
-  module.render = () => {
+  module.render = (content) => {
     module._style();
 
     return `
-      <button
-        class="game-button"
-      >
-        Start
+      <button class="game-button">
+        ${content}
       </button>
     `;
   };
