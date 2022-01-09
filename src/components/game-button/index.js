@@ -22,6 +22,12 @@ const gameButton = (() => {
         font-size: 1.05em;
         text-transform: uppercase;
         box-shadow: 0px 4px 5px #3a4042;
+        transition: opacity 300ms linear;
+      }
+
+      .game-button.-disabled {
+        opacity: 0;
+        z-index: -1;
       }
     `;
 
