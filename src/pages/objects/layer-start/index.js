@@ -1,10 +1,11 @@
 const layerStart = (() => {
   module = {};
 
-  module.handleClick = ($component) => {
-    const $children = $component.querySelectorAll('*');
-
-    $children.forEach(($item) => $item.classList.add('-disabled'));
+  module.handleClick = (event, $component) => {
+    if (event.target.classList.contains('game-button')) {
+      const $children = $component.querySelectorAll('*');
+      $children.forEach(($item) => $item.classList.add('-disabled'));
+    }
   };
 
   module.handleTransitionEnd = (event, $component) => {
@@ -19,7 +20,7 @@ const layerStart = (() => {
     return `
       <div
         className="layer-start"
-        onClick="layerStart.handleClick(this)"
+        onClick="layerStart.handleClick(event, this)"
         onTransitionEnd="layerStart.handleTransitionEnd(event, this)"
       >
         ${$transparencyLayer}
