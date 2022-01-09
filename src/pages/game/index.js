@@ -5,6 +5,8 @@
   const createMemoryCard = memoryCard.create();
 
   const $pointBar = pointBar.create();
+  const $gameButton = gameButton.render();
+
   const $memoryCardJS = createMemoryCard({
     nameClass: '-front',
     src: 'img/icon-js.png',
@@ -37,4 +39,5 @@
 
   $root.insertAdjacentHTML('afterbegin', $pointBar);
   $root.insertAdjacentElement('beforeend', $cardsWrapper);
+  $root.insertAdjacentHTML('beforeend', $gameButton);
 })();
