@@ -17,7 +17,6 @@ const transparencyLayer = (() => {
 
       .transparency-layer.-disabled {
         opacity: 0;
-        z-index: -1;
       }
     `;
 
