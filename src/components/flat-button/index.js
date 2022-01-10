@@ -1,16 +1,18 @@
 const flatButton = (() => {
   const module = {};
 
-  module._style = () => {
+  module._id = 0;
+
+  module._style = (active) => {
     const $head = document.querySelector('head');
     const $style = document.createElement('style');
 
     $style.textContent = `
-      .flat-button {
-        background-color: #eae6da;
-        width: 186px;
+      .flat-button-${module._id} {
+        width: 50%;
         height: 176px;
-        color: #fffeee;
+        background-color: ${active ? '#f25a70' : '#eae6da'};
+        color: ${active ? '#fff' : '#fffeee'};
         font-size: 1.5em;
         font-weight: bold;
         text-transform: uppercase;
@@ -20,14 +22,11 @@ const flatButton = (() => {
     $head.insertBefore($style, null);
   };
 
-  module.render = () => {
-    module._style();
+  module.render = ({ content = '', active = false }) => {
+    module._id++;
+    module._style(active);
 
-    return `
-      <button class="flat-button">
-        Login
-      </button>
-    `;
+    return `<button class="flat-button-${module._id}">${content}</button>`;
   };
 
   return {
