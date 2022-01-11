@@ -19,7 +19,6 @@ const layerStart = (() => {
 
     return `
       <div
-        className="layer-start"
         onClick="layerStart.handleClick(event, this)"
         onTransitionEnd="layerStart.handleTransitionEnd(event, this)"
       >
