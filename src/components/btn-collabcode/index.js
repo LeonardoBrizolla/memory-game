@@ -17,6 +17,10 @@ const btnCollabcode = (() => {
         cursor: pointer;
       }
 
+      .btn-collabcode:focus-visible {
+        outline: 3px solid #000;
+      }
+
       .input-collabcode + .btn-collabcode {
         margin-top: 45px;
       }
