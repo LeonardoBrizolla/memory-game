@@ -6,5 +6,7 @@
   routes['#/login'] = login;
   routes['#/signup'] = signup;
   routes['#/game'] = game;
-  routes[hash]();
+  routes['#/404'] = status404;
+
+  routes[hash] ? routes[hash]() : routes['#/404']();
 })();

@@ -31,7 +31,8 @@ const btnCollabcode = (() => {
 
   module.handleClick = (event, route) => {
     event.preventDefault();
-    window.location.hash = `#/${route}`;
+    location.hash = `#/${route}`;
+    location.reload(true);
   };
 
   module.render = ({ content = '', route = '' }) => {
