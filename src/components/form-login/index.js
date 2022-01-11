@@ -1,4 +1,4 @@
-const formSignup = (() => {
+const formLogin = (() => {
   const module = {};
 
   module._style = () => {
@@ -15,11 +15,6 @@ const formSignup = (() => {
   };
 
   module._children = () => {
-    const $usernameLabel = labelCollabcode.render('Username');
-    const $usernameInput = inputCollabcode.render({
-      placeholder: 'leobrizolla',
-    });
-
     const $emailLabel = labelCollabcode.render('E-mail');
     const $emailInput = inputCollabcode.render({
       placeholder: 'example@email.com',
@@ -32,23 +27,19 @@ const formSignup = (() => {
       type: 'password',
     });
 
-    const $confirmPasswordLabel = labelCollabcode.render('Confirm password');
-    const $confirmPasswordInput = inputCollabcode.render({
-      placeholder: '********',
-      type: 'password',
+    const $linkCollabcode = linkCollabcode.render({
+      href: '/',
+      content: 'Forget password',
     });
 
-    const $btn = btnCollabcode.render('Submit');
+    const $btn = btnCollabcode.render('Login');
 
     return `
-      ${$usernameLabel}
-      ${$usernameInput}
       ${$emailLabel}
       ${$emailInput}
       ${$passwordLabel}
       ${$passwordInput}
-      ${$confirmPasswordLabel}
-      ${$confirmPasswordInput}
+      ${$linkCollabcode}
       ${$btn}
     `;
   };
