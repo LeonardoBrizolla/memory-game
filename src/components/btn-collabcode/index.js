@@ -21,7 +21,7 @@ const btnCollabcode = (() => {
         outline: 3px solid #000;
       }
 
-      .input-collabcode + .btn-collabcode {
+      .eye-collabcode + .btn-collabcode {
         margin-top: 45px;
       }
     `;
@@ -29,15 +29,26 @@ const btnCollabcode = (() => {
     $head.insertBefore($style, null);
   };
 
-  module.render = (content) => {
+  module.handleClick = (event, route) => {
+    event.preventDefault();
+    window.location.hash = `#/${route}`;
+  };
+
+  module.render = ({ content = '', route = '' }) => {
     module._style();
 
     return `
-      <input class="btn-collabcode" type="submit" value="${content}" />
+      <input
+        class="btn-collabcode"
+        type="submit"
+        value="${content}"
+        onClick="btnCollabcode.handleClick(event, '${route}')"
+      />
     `;
   };
 
   return {
     render: module.render,
+    handleClick: module.handleClick,
   };
 })();

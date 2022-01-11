@@ -16,7 +16,7 @@ const linkCollabcode = (() => {
         margin-bottom: 60px;
       }
 
-      .input-collabcode + .link-collabcode {
+      .eye-collabcode + .link-collabcode {
         margin-top: 43px;
       }
     `;

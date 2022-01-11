@@ -28,17 +28,28 @@ const formSignup = (() => {
 
     const $passwordLabel = labelCollabcode.render('Password');
     const $passwordInput = inputCollabcode.render({
-      placeholder: '********',
+      id: 'password',
+      placeholder: '',
       type: 'password',
+    });
+    const $eyeCollabcodePassword = eyeCollabcode.render({
+      attrFor: 'password',
     });
 
     const $confirmPasswordLabel = labelCollabcode.render('Confirm password');
     const $confirmPasswordInput = inputCollabcode.render({
-      placeholder: '********',
+      id: 'confirmPassword',
+      placeholder: '',
       type: 'password',
     });
+    const $eyeCollabcodeConfirmPassword = eyeCollabcode.render({
+      attrFor: 'confirmPassword',
+    });
 
-    const $btn = btnCollabcode.render('Submit');
+    const $btn = btnCollabcode.render({
+      content: 'Signup',
+      route: 'login',
+    });
 
     return `
       ${$usernameLabel}
@@ -47,8 +58,10 @@ const formSignup = (() => {
       ${$emailInput}
       ${$passwordLabel}
       ${$passwordInput}
+      ${$eyeCollabcodePassword}
       ${$confirmPasswordLabel}
       ${$confirmPasswordInput}
+      ${$eyeCollabcodeConfirmPassword}
       ${$btn}
     `;
   };

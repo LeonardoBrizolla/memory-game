@@ -9,6 +9,7 @@ const flatButton = (() => {
 
     $style.textContent = `
       .flat-button-${module._id} {
+        box-sizing: border-box;
         display: inline-flex;
         justify-content: center;
         width: 50%;
@@ -25,14 +26,25 @@ const flatButton = (() => {
     $head.insertBefore($style, null);
   };
 
-  module.render = ({ content = '', active = false }) => {
+  module.handleClick = (route) => {
+    window.location.hash = `#/${route}`;
+  };
+
+  module.render = ({ content = '', active = false, route = '' }) => {
     module._id++;
     module._style(active);
 
-    return `<button class="flat-button-${module._id}">${content}</button>`;
+    return `<!--
+  --><button
+        class="flat-button-${module._id}"
+        onclick="flatButton.handleClick('${route}')"
+      >
+        ${content}
+      </button>`;
   };
 
   return {
     render: module.render,
+    handleClick: module.handleClick,
   };
 })();

@@ -23,8 +23,12 @@ const formLogin = (() => {
 
     const $passwordLabel = labelCollabcode.render('Password');
     const $passwordInput = inputCollabcode.render({
-      placeholder: '********',
+      id: 'password',
+      placeholder: '',
       type: 'password',
+    });
+    const $eyeCollabcode = eyeCollabcode.render({
+      attrFor: 'password',
     });
 
     const $linkCollabcode = linkCollabcode.render({
@@ -32,13 +36,17 @@ const formLogin = (() => {
       content: 'Forget password',
     });
 
-    const $btn = btnCollabcode.render('Login');
+    const $btn = btnCollabcode.render({
+      content: 'Login',
+      route: 'game',
+    });
 
     return `
       ${$emailLabel}
       ${$emailInput}
       ${$passwordLabel}
       ${$passwordInput}
+      ${$eyeCollabcode}
       ${$linkCollabcode}
       ${$btn}
     `;
